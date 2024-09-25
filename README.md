@@ -13,6 +13,40 @@ Born to make stream media unlock by WARP
 
 * * *
 
+## VPS 运行脚本
+
+### 1.菜单方式 (menu)
+```
+bash <(curl -sSL https://raw.githubusercontent.com/ChishioMoe/unlock_warp/refs/heads/main/unlock_warp.sh)
+```
+### 2.带参数 (pass parameter)
+  | paremeter 参数 | value 值 | describe 具体动作说明 |
+  | ----------|------- | --------------- |
+  | -E |   | English 英文 |
+  | -C |   | Chinese 中文 |
+  | -U |   | Uninstall 卸载  |
+  | -M | 1 | Mode 1: detect every 5   minute 每5分钟检测 |
+  | -M | 2 | Mode 2: run by systemd   以 systemd 方式运行 |
+  | -M | 3 | Mode 3: run by nohup &   以 hup & 方式运行 |
+  | -M | 4 | Mode 4: run by screen   以 screen 方式运行 |
+  | -M | 5 | Mode 5: run by pm2 daemon  以 pm2 进程守护方式运行 |  
+  | -A | ** | region abbreviation,such as us. 地区简码,如 us |
+  | -N | n | Unlock Neflix 解锁奈飞 |
+  | -N | d | Unlock Disney+ 解锁迪士尼 |
+  | -N | ud | Unlock Neflix and Disney+ 解锁奈飞和迪士尼 |
+  | -T | Token@ID@Name | Receive messages Bot 接收信息的 TG bot 信息 |
+
+For example 1: Language is Chinese. Unlock area is Singapore. Brush WARP IPv4. Unlock Netflix and detect every 5 minute when successed. Receive message to
+举例1: 用中文，解锁新加坡奈飞，当成功的时候每5分钟检测一次，
+```
+bash <(curl -sSL https://gitlab.com/fscarmen/warp_unlock/-/raw/main/unlock.sh) -C -A sg -4 -N n -M 1 -T 1730133Uu5:AAF33T7sWPB8cGu31-QoaUkjdkjzeRo1_m8@1254502669@unlock
+```
+For example 2: Display and uninstall in English
+举例2: 用英文卸载
+```
+bash <(curl -sSL https://gitlab.com/fscarmen/warp_unlock/-/raw/main/unlock.sh) -E -U
+```
+
 ## 更新信息
 2023.7.4 1.13 Wireguard-go-reserved supports changing IP; Wireguard-go-reserved 支持更换 IP
 
@@ -80,39 +114,7 @@ beta 2022.1.26 Media unlock daemon. Check it every 5 minutes. If unlocked, the s
 
 <img src="https://user-images.githubusercontent.com/62703343/155870126-97aaea72-d714-4d1d-80c6-f9864d0246a6.png" width="60%" />
 
-## VPS 运行脚本
 
-### 1.菜单方式 (menu)
-```
-bash <(curl -sSL https://gitlab.com/fscarmen/warp_unlock/-/raw/main/unlock.sh)
-```
-### 2.带参数 (pass parameter)
-  | paremeter 参数 | value 值 | describe 具体动作说明 |
-  | ----------|------- | --------------- |
-  | -E |   | English 英文 |
-  | -C |   | Chinese 中文 |
-  | -U |   | Uninstall 卸载  |
-  | -M | 1 | Mode 1: detect every 5   minute 每5分钟检测 |
-  | -M | 2 | Mode 2: run by systemd   以 systemd 方式运行 |
-  | -M | 3 | Mode 3: run by nohup &   以 hup & 方式运行 |
-  | -M | 4 | Mode 4: run by screen   以 screen 方式运行 |
-  | -M | 5 | Mode 5: run by pm2 daemon  以 pm2 进程守护方式运行 |  
-  | -A | ** | region abbreviation,such as us. 地区简码,如 us |
-  | -N | n | Unlock Neflix 解锁奈飞 |
-  | -N | d | Unlock Disney+ 解锁迪士尼 |
-  | -N | ud | Unlock Neflix and Disney+ 解锁奈飞和迪士尼 |
-  | -T | Token@ID@Name | Receive messages Bot 接收信息的 TG bot 信息 |
-
-For example 1: Language is Chinese. Unlock area is Singapore. Brush WARP IPv4. Unlock Netflix and detect every 5 minute when successed. Receive message to
-举例1: 用中文，解锁新加坡奈飞，当成功的时候每5分钟检测一次，
-```
-bash <(curl -sSL https://gitlab.com/fscarmen/warp_unlock/-/raw/main/unlock.sh) -C -A sg -4 -N n -M 1 -T 1730133Uu5:AAF33T7sWPB8cGu31-QoaUkjdkjzeRo1_m8@1254502669@unlock
-```
-For example 2: Display and uninstall in English
-举例2: 用英文卸载
-```
-bash <(curl -sSL https://gitlab.com/fscarmen/warp_unlock/-/raw/main/unlock.sh) -E -U
-```
 
 ### TG bot 创建方法
 转自 北纬37度的大飛 [如何申请Telegram机器人 | 推送通知](https://w37fhy.cn/2364.html)
